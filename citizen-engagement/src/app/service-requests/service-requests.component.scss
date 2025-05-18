@@ -1,0 +1,53 @@
+.service-requests {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h1, h2 {
+    color: var(--dark);
+  }
+
+  .request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    button {
+      align-self: flex-start;
+    }
+  }
+
+  .submitted-requests {
+    .request-card {
+      margin-bottom: 15px;
+
+      .status {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: white;
+      }
+
+      .pending {
+        background-color: #f8961e;
+      }
+
+      .in\ progress {
+        background-color: #4361ee;
+      }
+
+      .completed {
+        background-color: #4cc9f0;
+        color: #003049;
+      }
+    }
+  }
+}

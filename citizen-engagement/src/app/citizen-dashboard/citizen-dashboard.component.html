@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Citizen Portal</h2>
+      <p>Dashboard</p>
+    </div>
+    <div class="sidebar-menu">
+      <a class="menu-item active" routerLinkActive="active" [routerLink]="'/profile'">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a class="menu-item" routerLinkActive="active" [routerLink]="'/service-request'">
+        <i class="fas fa-tasks"></i>
+        <span>Service Requests</span>
+      </a>
+      <a class="menu-item" routerLinkActive="active" [routerLink]="'/request-status'">
+        <i class="fas fa-clipboard-check"></i>
+        <span>Request Status</span>
+      </a>
+      <div class="menu-item" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

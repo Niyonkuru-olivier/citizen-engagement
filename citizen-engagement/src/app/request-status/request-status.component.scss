@@ -1,0 +1,81 @@
+.request-status {
+  padding: 20px;
+
+  .header {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.5rem;
+      color: #212529;
+    }
+  }
+
+  .no-requests {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+  }
+
+  .request-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .request-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.08);
+    padding: 18px 20px 14px 20px;
+    margin-bottom: 0;
+    transition: box-shadow 0.3s;
+    border-left: 4px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &.pending {
+      border-color: #f8961e;
+    }
+
+    &.in-progress {
+      border-color: #4361ee;
+    }
+
+    &.resolved {
+      border-color: #4cc9f0;
+    }
+
+    .status-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    &.pending .status-badge {
+      background-color: #f8961e;
+    }
+
+    &.in-progress .status-badge {
+      background-color: #4361ee;
+    }
+
+    &.resolved .status-badge {
+      background-color: #4cc9f0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .request-list {
+      grid-template-columns: 1fr;
+    }
+
+    .request-card {
+      padding: 12px 8px 10px 8px;
+    }
+  }
+}

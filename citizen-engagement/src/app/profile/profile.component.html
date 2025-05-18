@@ -1,0 +1,60 @@
+<div class="profile-container">
+  <h2>My Profile</h2>
+
+  <mat-card class="profile-card">
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            [(ngModel)]="citizen.fullName"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="citizen.email"
+            required
+            disabled
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            [(ngModel)]="citizen.phone"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea
+            id="address"
+            name="address"
+            [(ngModel)]="citizen.address"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <div class="button-group">
+          <button mat-raised-button color="primary" type="submit">
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

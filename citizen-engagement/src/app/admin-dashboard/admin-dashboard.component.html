@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Admin Portal</h2>
+      <p>Dashboard</p>
+    </div>
+    <div class="sidebar-menu">
+      <a class="menu-item active" routerLinkActive="active" [routerLink]="'/complaints-management'">
+        <i class="fas fa-user"></i>
+        <span>Complaints Management Panel</span>
+      </a>
+      <a class="menu-item" routerLinkActive="active" [routerLink]="'/analytics-overview'">
+        <i class="fas fa-tasks"></i>
+        <span>Analytics & Status Overview</span>
+      </a>
+      <a class="menu-item" routerLinkActive="active" [routerLink]="'/feedback-Insights'">
+        <i class="fas fa-clipboard-check"></i>
+        <span>Request Status</span>
+      </a>
+      <div class="menu-item" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

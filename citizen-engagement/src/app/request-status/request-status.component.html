@@ -1,0 +1,22 @@
+<div class="request-status">
+  <div class="header">
+    <h2>Your Service Requests</h2>
+  </div>
+
+  <div *ngIf="requests.length === 0" class="no-requests">
+    <p>You have not submitted any requests yet.</p>
+  </div>
+
+  <div *ngIf="requests.length > 0" class="request-list">
+    <mat-card *ngFor="let request of requests" class="request-card" [ngClass]="statusClass(request.status)">
+      <mat-card-header>
+        <mat-card-title>{{ request.title }}</mat-card-title>
+        <mat-card-subtitle>{{ request.submittedAt | date:'mediumDate' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ request.description }}</p>
+        <span class="status-badge">{{ request.status }}</span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

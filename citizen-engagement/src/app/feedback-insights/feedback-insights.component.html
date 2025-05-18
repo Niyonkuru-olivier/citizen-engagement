@@ -1,0 +1,26 @@
+<div class="feedback-section">
+  <h2>User Feedback & System Insights</h2>
+
+  <div class="feedback-summary">
+    <div class="stat-card">
+      <h3>{{ averageRating | number:'1.1-2' }}</h3>
+      <p>Average Rating</p>
+    </div>
+    <div class="stat-card">
+      <h3>{{ totalFeedback }}</h3>
+      <p>Total Feedback</p>
+    </div>
+  </div>
+
+  <div class="feedback-list">
+    <h3>Recent Feedback</h3>
+    <div *ngFor="let feedback of feedbackList" class="feedback-item">
+      <div class="feedback-header">
+        <strong>{{ feedback.citizenName }}</strong>
+        <span class="rating">⭐ {{ feedback.rating }}</span>
+      </div>
+      <p class="message">"{{ feedback.comment }}"</p>
+      <p class="date">{{ feedback.date | date: 'shortDate' }}</p>
+    </div>
+  </div>
+</div>

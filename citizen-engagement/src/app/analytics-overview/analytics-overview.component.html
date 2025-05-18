@@ -1,0 +1,41 @@
+<div class="analytics-container">
+  <h2>Analytics & Status Overview</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Total Complaints Today</h3>
+      <p>{{ totalComplaintsToday }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total This Month</h3>
+      <p>{{ totalComplaintsThisMonth }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Avg. Resolution Time</h3>
+      <p>{{ averageResolutionTime }}</p>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart">
+      <h4>Complaints by Status</h4>
+      <ul>
+        <li>Open: {{ complaintStatusData.open }}</li>
+        <li>In Progress: {{ complaintStatusData.inProgress }}</li>
+        <li>Resolved: {{ complaintStatusData.resolved }}</li>
+      </ul>
+    </div>
+
+    <div class="chart">
+      <h4>Complaints by Category</h4>
+      <ul>
+        <li>Water: {{ complaintsByCategory.water }}</li>
+        <li>Electricity: {{ complaintsByCategory.electricity }}</li>
+        <li>Roads: {{ complaintsByCategory.roads }}</li>
+        <li>Sanitation: {{ complaintsByCategory.sanitation }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

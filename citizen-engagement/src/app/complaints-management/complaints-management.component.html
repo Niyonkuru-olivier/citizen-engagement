@@ -1,0 +1,53 @@
+<div class="complaints-panel">
+  <h2>Complaints Management</h2>
+
+  <!-- Filter Controls -->
+  <div class="filters">
+    <label>Status:
+      <select [(ngModel)]="selectedStatus" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+      </select>
+    </label>
+    <label>Category:
+      <select [(ngModel)]="selectedCategory" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let category of categoryOptions" [value]="category">{{ category }}</option>
+      </select>
+    </label>
+  </div>
+
+  <!-- Complaints Table -->
+  <table class="complaints-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Citizen</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Date Submitted</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let complaint of filteredComplaints">
+        <td>{{ complaint.id }}</td>
+        <td>{{ complaint.citizen }}</td>
+        <td>{{ complaint.category }}</td>
+        <td>{{ complaint.description }}</td>
+        <td>
+          <span class="badge" [ngClass]="complaint.status.toLowerCase()">
+            {{ complaint.status }}
+          </span>
+        </td>
+        <td>{{ complaint.date }}</td>
+        <td>
+          <button (click)="markResolved(complaint)" [disabled]="complaint.status === 'Resolved'">
+            Mark as Resolved
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

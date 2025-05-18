@@ -1,0 +1,33 @@
+<div class="service-requests">
+  <h1>Submit a Service Request</h1>
+
+  <form [formGroup]="requestForm" (ngSubmit)="submitRequest()" class="request-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="E.g. Broken street light">
+      <mat-error *ngIf="requestForm.get('title')?.invalid">Title is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Describe the issue..."></textarea>
+      <mat-error *ngIf="requestForm.get('description')?.invalid">Description is required (min 10 characters)</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="requestForm.invalid">Submit Request</button>
+  </form>
+
+  <div class="submitted-requests">
+    <h2>Previous Requests</h2>
+    <mat-card *ngFor="let req of requests" class="request-card">
+      <mat-card-header>
+        <mat-card-title>{{ req.title }}</mat-card-title>
+        <mat-card-subtitle>{{ req.dateSubmitted }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ req.description }}</p>
+        <span class="status" [ngClass]="req.status.toLowerCase()">{{ req.status }}</span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
