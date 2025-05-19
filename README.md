@@ -70,10 +70,15 @@ cd ../backend
 npm install
 ### Create a .env file inside /backend folder with the following:
 DB_HOST=localhost
+
 DB_PORT=3306
+
 DB_USERNAME=root
+
 DB_PASSWORD=yourpassword
+
 DB_NAME=citizen_engagement
+
 JWT_SECRET=your_jwt_secret
 ### Then run the backend server:
 npm run start:dev
