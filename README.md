@@ -46,9 +46,13 @@ The **Citizen Complaints and Engagement System** is a platform that allows citiz
 ## Project Structure
 
 citizen-engagement-system/
+
 ├── frontend/ # Angular frontend
+
 ├── backend/ # NestJS backend
+
 ├── README.md
+
 └── .gitignore
 
 ## How to Run the Project Locally
