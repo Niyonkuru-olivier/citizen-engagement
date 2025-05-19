@@ -30,8 +30,11 @@ The **Citizen Complaints and Engagement System** is a platform that allows citiz
 ## Importance to Society
 
 ✅ Promotes transparency in governance
+
 ✅ Enhances communication between government and citizens
+
 ✅ Reduces bureaucracy and response delays
+
 ✅ Builds citizen trust and engagement in public services
 
 ## 🧰 How the System Works
@@ -65,12 +68,15 @@ cd citizen-engagement
 
 ### 2️⃣ Set Up the Frontend (Angular)
 cd citizen-engagement
+
 npm install
+
 ng serve
 
 Access frontend at: http://localhost:4200
 ### 3️⃣ Set Up the Backend (NestJS)
 cd ../backend
+
 npm install
 ### Create a .env file inside /backend folder with the following:
 DB_HOST=localhost
