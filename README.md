@@ -56,6 +56,7 @@ citizen-engagement-system/
 ### 1️⃣ Clone the Repository
 
 git clone https://github.com/Niyonkuru-olivier/citizen-engagement.git
+
 cd citizen-engagement
 
 ### 2️⃣ Set Up the Frontend (Angular)
